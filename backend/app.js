@@ -29,8 +29,11 @@ app.use(cors());
 
 const mongoose = require("mongoose");
 
+const uri =
+  "mongodb+srv://sakurazc0829:csyrdc0829@cluster0.o5x7fth.mongodb.net/SimpleNutrientDatabase?retryWrites=true&w=majority&appName=Cluster0";
+
 mongoose
-  .connect("mongodb://localhost:27017/SimpleNutrientDatabase")
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Database connection successful");
   })
