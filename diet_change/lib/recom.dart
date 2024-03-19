@@ -66,7 +66,7 @@ class _RecomPageState extends State<RecomPage> {
     });
     try {
       final response = await http.post(
-        Uri.parse('http://10.114.74.46:3000/updatedata'),
+        Uri.parse('http://3.10.233.31:3000/updatedata'),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token"

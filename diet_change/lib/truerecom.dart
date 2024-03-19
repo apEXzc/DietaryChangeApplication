@@ -88,7 +88,7 @@ class _TrueRecomState extends State<TrueRecom> {
     try {
       final response = await http.get(
         Uri.parse(
-            'http://10.114.74.46:3000/recomsys?param=$param&returnType=$returnType'),
+            'http://3.10.233.31:3000/recomsys?param=$param&returnType=$returnType'),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token"
@@ -104,7 +104,7 @@ class _TrueRecomState extends State<TrueRecom> {
             for (var recipe in data) {
               String name = recipe['name'];
               _recipes.add(name);
-              _recipeDetails[name] = recipe; // 存储食谱的详细信息
+              _recipeDetails[name] = recipe;
             }
             if (!_recipes.contains(_selectedRecipe)) {
               _selectedRecipe = _recipes.isNotEmpty ? _recipes.first : null;
@@ -113,7 +113,6 @@ class _TrueRecomState extends State<TrueRecom> {
         } else {
           setState(() {
             _selectedRecipe = data['name'];
-            // 确保也更新了 _recipeDetails
             _recipeDetails[_selectedRecipe!] = data;
           });
         }
@@ -147,7 +146,7 @@ class _TrueRecomState extends State<TrueRecom> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.114.74.46:3000/modifydata'),
+        Uri.parse('http://3.10.233.31:3000/modifydata'),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token"
@@ -259,7 +258,6 @@ class RecipeDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 将directions字符串分割成列表
     List<String> directions = recipeData['directions']
         .split('.')
         .where((item) => (item as String).trim().isNotEmpty)
@@ -323,7 +321,6 @@ class RecipeDetailPage extends StatelessWidget {
   }
 
   void _showNutritionInfoDialog(BuildContext context) {
-    // 提取需要的字段
     Map<String, dynamic> nutritionInfo = {
       'calories': recipeData['calories'],
       'carbohydrates_g': recipeData['carbohydrates_g'],

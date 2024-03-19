@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
     String username = _usernameController.text;
     String password = _passwordController.text;
 
-    var url = Uri.parse('http://10.114.74.46:3000/login');
+    var url = Uri.parse('http://3.10.233.31:3000/login');
     try {
       var response = await http.post(
         url,

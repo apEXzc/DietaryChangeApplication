@@ -235,7 +235,7 @@ class _SecondSignupFormState extends State<SecondSignupForm> {
 
   void submitAnswers(BuildContext context) async {
     if (validateAnswers()) {
-      var url = Uri.parse('http://10.114.74.46:3000/submitreginfo');
+      var url = Uri.parse('http://3.10.233.31:3000/submitreginfo');
       try {
         var response = await http.post(
           url,

@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
-const String weeklyReportUrl = 'http://10.114.74.46:3000/report/weekly';
-const String monthlyReportUrl = 'http://10.114.74.46:3000/report/monthly';
+const String weeklyReportUrl = 'http://3.10.233.31:3000/report/weekly';
+const String monthlyReportUrl = 'http://3.10.233.31:3000/report/monthly';
 
 class ReportPage extends StatefulWidget {
   @override

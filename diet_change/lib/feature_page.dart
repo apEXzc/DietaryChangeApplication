@@ -68,7 +68,7 @@ class _FeatureState extends State<Feature>
 
     try {
       final response = await http.get(
-        Uri.parse('http://10.114.74.46:3000/userupnutrition'),
+        Uri.parse('http://3.10.233.31:3000/userupnutrition'),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token"

@@ -109,7 +109,7 @@ class _SurveyPageState extends State<SurveyPage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
 
-    var url = Uri.parse('http://10.114.74.46:3000/submitfav/foodlist');
+    var url = Uri.parse('http://3.10.233.31:3000/submitfav/foodlist');
     try {
       var response = await http.get(url, headers: {
         'Authorization': 'Bearer $token',
@@ -157,7 +157,7 @@ class _SurveyPageState extends State<SurveyPage> {
       return;
     }
 
-    var url = Uri.parse('http://10.114.74.46:3000/search?term=$query');
+    var url = Uri.parse('http://3.10.233.31:3000/search?term=$query');
     try {
       var response = await http.get(url);
       if (response.statusCode == 200) {
@@ -303,7 +303,7 @@ class _SurveyPageState extends State<SurveyPage> {
   }
 
   void _confirmSelection() async {
-    var url = Uri.parse('http://10.114.74.46:3000/submitfav');
+    var url = Uri.parse('http://3.10.233.31:3000/submitfav');
 
     var body = json.encode({
       'favoriteFoods': _selectedFavoriteFoods,
